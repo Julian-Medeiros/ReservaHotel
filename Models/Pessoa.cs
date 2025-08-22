@@ -12,6 +12,7 @@ namespace ReservaHotel.Models
             Nome = nome;
             Sobrenome = sobrenome;
         }
+       
         private string _nome;
         private string _sobrenome;
         public string Nome
@@ -23,7 +24,7 @@ namespace ReservaHotel.Models
                 {
                     throw new ArgumentException("Nome não pode ser vazio, digite um nome");
                 }
-                _nome = value;
+                _nome = value.ToUpper();
             }
         }
         public string Sobrenome
@@ -35,9 +36,8 @@ namespace ReservaHotel.Models
                 {
                     throw new ArgumentException("Sobrenome não pode ser vazio, digite um sobrenome");
                 }
-                _sobrenome = value;
+                _sobrenome = value.ToUpper();
             }
         }
-        public string NomeCompleto => $"{Nome} {Sobrenome}".ToUpper();
     }   
 }
